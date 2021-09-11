@@ -1,0 +1,31 @@
+# Test API from registerRoute.
+GET http://localhost:8001/register HTTP/1.1
+
+###
+GET http://localhost:8001/auth/login HTTP/1.1
+
+###
+# Test Register
+POST http://localhost:8001/register HTTP/1.1
+content-type: application/json
+
+{
+    "name": "user6",
+    "email": "user6@gmail.com",
+    "password": "@Str4ng@P4ssWorD",
+    "passwordConfirmation": "@Str4ng@P4ssWorD"
+}
+
+###
+# Test Login
+POST http://localhost:8001/auth/login HTTP/1.1
+content-type: application/json
+
+{
+    "email": "user6@gmail.com",
+    "password": "@Str4ng@P4ssWorD"
+}
+
+###
+# Test Logout
+POST http://localhost:8001/auth/logout HTTP/1.1
